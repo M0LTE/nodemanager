@@ -20,25 +20,24 @@ namespace bpqconfigtests
 
             var telnetPortBuilder = new TelnetPortBuilder();
             telnetPortBuilder
-                .WithReasonableDefaults()
                 .WithPortNumber(9)
-                .WithId("Telnet")
+                .WithReasonableDefaults()
                 .AddUser("tf", "xxxxxxxx", "m0lte", null, true);
 
             var builder = new BpqConfigBuilder();
             var config = builder
-                .WithOpinionatedDefaults()
                 .WithNodeCall("MB7NGP")
                 .WithNodeAlias("GILWEL")
                 .WithLocator("JO01ap")
                 .WithPassword("abc123")
-                .WithDefaultText()
+                .WithDefaultTexts()
+                .WithChatEnabled("MB7NGP-9", "GPCHAT")
+                .WithOpinionatedDefaults()
                 .AddPort(kissPortBuilder.Build())
                 .AddPort(telnetPortBuilder.Build())
-                .WithChatEnabled("MB7NGP-9", "GPCHAT")
                 .Build();
 
-            string fileContent = config.Generate().Replace("\r\n", "\n");
+            string fileContent = config.Generate();
 
             var expected = @"SIMPLE
 NODECALL=MB7NGP

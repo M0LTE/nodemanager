@@ -59,7 +59,7 @@ namespace bpqconfig
                 sb.AppendLine(application.ToString());
             }
 
-            return sb.ToString();
+            return sb.ToString().Replace("\r\n", "\n");
         }
     }
 }

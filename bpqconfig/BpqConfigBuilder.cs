@@ -53,7 +53,7 @@
             return this;
         }
 
-        public BpqConfigBuilder WithDefaultText()
+        public BpqConfigBuilder WithDefaultTexts()
         {
             _config.IdMsg = $"BPQ node {_config.NodeAlias}:{_config.NodeCall}";
             _config.CText = "Welcome to this node.\nType ? for help.";

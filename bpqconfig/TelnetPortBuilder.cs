@@ -49,6 +49,8 @@ namespace bpqconfig
 
         public TelnetPortBuilder WithReasonableDefaults()
         {
+            _port.Id ??= "Telnet";
+
             _port.Config = new BpqTelnetPortConfig
             {
                 Logging = true,
