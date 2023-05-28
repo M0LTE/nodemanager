@@ -14,7 +14,19 @@ namespace bpqmanager.Pages
 
         public void OnGet()
         {
+        }
 
+        public IActionResult OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            /*if (Customer != null) _context.Customer.Add(Customer);
+            await _context.SaveChangesAsync();*/
+
+            return RedirectToPage("./Index");
         }
     }
 }
