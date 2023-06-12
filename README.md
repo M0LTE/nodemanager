@@ -13,13 +13,13 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 1. Choose Raspberry Pi OS Lite (64-bit)
 1. Choose your micro SD card
 1. Click the cog, choose some options:
-  1. Set hostname: `mypi`
-  1. Tick enable SSH, Use Password Authentication
-  1. Tick Set username and password, set as you wish, e.g. `dave`
-  1. Tick Configure wireless LAN, set as required to connect to your home Wi-Fi
-  (or don't, if you will use wired network)
-  1. Tick Set locale settings, choose time zone and keyboard layout
-  1. Click Save, Write, read and accept the warning.
+   1. Set hostname: `mypi`
+   1. Tick enable SSH, Use Password Authentication
+   1. Tick Set username and password, set as you wish, e.g. `dave`
+   1. Tick Configure wireless LAN, set as required to connect to your home Wi-Fi
+   (or don't, if you will use wired network)
+   1. Tick Set locale settings, choose time zone and keyboard layout
+   1. Click Save, Write, read and accept the warning.
 1. Wait for write and verify to complete, remove micro SD and place in Pi, power it on
 1. Wait approximately 3 minutes
 
@@ -29,11 +29,22 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 1. Connect via SSH: type `ssh dave@mypi`, accept the prompt by typing "yes" and pressing enter. 
 1. Enter the password you set earlier.
 
-Or, use a keyboard and screen.
+If you can't connect, use a keyboard and screen, log in using the username and password you set earlier, and type:
+
+```
+ifconfig wlan0 | grep inet
+```
+the output will contain the IP address of your Pi, e.g. 
+```
+  inet 192.168.0.91  netmask 255.255.255.0  broadcast 192.168.0.255
+```
+the IP of your Pi is 192.168.0.91, and you should try connecting like `ssh dave@192.168.0.91` instead.
+
+Or, just use a keyboard and screen directly on the Pi from here on in.
 
 ### Install bpqmanager
 
-Copy-paste the following one-liner to install and start bpqmanager:
+1. Copy-paste the following one-liner to install and start bpqmanager:
 
 ```
 wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinstall.sh | /bin/bash
@@ -41,4 +52,4 @@ wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinsta
 
 NB if you prefer to inspect the script, run the same command but omitting `| /bin/bash`.
 
-From another PC, open a browser and navigate to http://mypi:5000
+2. From another PC, open a browser and navigate to http://mypi:5000
