@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Build standalone executable
+      working-directory: bpqmanager
+      run: dotnet publish --runtime linux-arm64 --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish
