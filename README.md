@@ -57,3 +57,11 @@ wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinsta
 NB if you prefer to inspect the script, run the same command but omitting `| /bin/bash`.
 
 2. From another PC, open a browser and navigate to http://packetnode:5000
+
+### Remove bpqmanager
+
+If for some reason you want to remove bpqmanager, you can undo all of its installation steps with this one-liner:
+
+```
+wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remove.sh | /bin/bash
+```
