@@ -51,7 +51,7 @@ Or, just use a keyboard and screen directly on the Pi from here on in.
 hint: paste in a terminal is often single right-click
 
 ```
-wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinstall.sh | /bin/bash
+wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/install.sh | /bin/bash
 ```
 
 NB if you prefer to inspect the script, run the same command but omitting `| /bin/bash`.
