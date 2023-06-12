@@ -17,6 +17,6 @@ Restart=always
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/bpqmanager.service'
 sudo systemctl daemon-reload
-sudo systemctl enable bpqmanager
+sudo systemctl enable bpqmanager > /dev/null
 sudo systemctl start bpqmanager
 echo All done, please visit http://`hostname`:5000 from another PC on your LAN
