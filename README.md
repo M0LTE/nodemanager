@@ -33,7 +33,7 @@ Or, use a keyboard and screen.
 
 ### Install bpqmanager
 
-Copy-paste the following one-liner to install bpqmanager:
+Copy-paste the following one-liner to install and start bpqmanager:
 
 ```
 wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinstall.sh | /bin/bash
