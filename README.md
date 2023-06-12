@@ -2,7 +2,7 @@
 
 ## Installation
 
-Throughout these instructions, we'll refer to your Raspberry Pi as `mypi` and your user account on it as `dave` but you can substitute whatever name you want.
+Throughout these instructions, we'll refer to your Raspberry Pi as `bpqnode` and your user account on it as `dave` but you can substitute whatever name you want.
 
 Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and have a fresh Pi prepared with Raspberry Pi OS Lite 64 bit.
 
@@ -13,7 +13,7 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 1. Under Operating System, choose Raspberry Pi OS Lite (64-bit)
 1. Under Storage, choose your micro SD card
 1. Click the cog, choose some options:
-   1. Set hostname: `mypi`
+   1. Set hostname: `bpqnode`
    1. Tick enable SSH, Use Password Authentication
    1. Tick Set username and password, set as you wish, e.g. `dave`, and a strong password
    1. Tick Configure wireless LAN, set as required to connect to your home Wi-Fi
@@ -26,7 +26,7 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 ### Get a prompt on your Pi
 
 1. From another PC, open a command prompt (on Windows, press Start and type command prompt, press enter)
-1. Connect via SSH: type `ssh dave@mypi`, accept the prompt by typing "yes" and pressing enter. 
+1. Connect via SSH: type `ssh dave@bpqnode`, accept the prompt by typing "yes" and pressing enter. 
 1. Enter the password you set earlier.
 
 If you can't connect, use a keyboard and screen plugged into your Pi, log in using the username and password you set earlier, and type:
@@ -54,4 +54,4 @@ wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinsta
 
 NB if you prefer to inspect the script, run the same command but omitting `| /bin/bash`.
 
-2. From another PC, open a browser and navigate to http://mypi:5000
+2. From another PC, open a browser and navigate to http://bpqnode:5000
