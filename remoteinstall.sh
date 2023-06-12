@@ -1,5 +1,6 @@
 #!/bin/bash -e
 echo Installing bpqmanager, please wait...
+rm -f bpqmanager.zip
 wget -q https://nightly.link/M0LTE/bpqmanager/workflows/dotnet/master/bpqmanager.zip
 sudo systemctl stop bpqmanager > /dev/null 2>&1
 sudo systemctl disable bpqmanager > /dev/null 2>&1
