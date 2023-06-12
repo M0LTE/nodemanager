@@ -13,8 +13,8 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 1. Under Operating System, choose Raspberry Pi OS Lite (64-bit)
 1. Under Storage, choose your micro SD card
 1. Click the cog, choose some options:
-   1. Set hostname: `packetnode`
-   1. Tick enable SSH, Use Password Authentication
+   1. Tick Set hostname: `packetnode`
+   1. Tick Enable SSH, Use Password Authentication
    1. Tick Set username and password, set as you wish, e.g. `dave`, and a strong password
    1. Tick Configure wireless LAN, set as required to connect to your home Wi-Fi
    (or don't, if you will use wired network)
