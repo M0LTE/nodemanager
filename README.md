@@ -10,12 +10,12 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 
 1. Insert fresh micro SD card into reader
 1. Download and run Raspberry Pi Imager
-1. Choose Raspberry Pi OS Lite (64-bit)
-1. Choose your micro SD card
+1. Under Operating System, choose Raspberry Pi OS Lite (64-bit)
+1. Under Storage, choose your micro SD card
 1. Click the cog, choose some options:
    1. Set hostname: `mypi`
    1. Tick enable SSH, Use Password Authentication
-   1. Tick Set username and password, set as you wish, e.g. `dave`
+   1. Tick Set username and password, set as you wish, e.g. `dave`, and a strong password
    1. Tick Configure wireless LAN, set as required to connect to your home Wi-Fi
    (or don't, if you will use wired network)
    1. Tick Set locale settings, choose time zone and keyboard layout
