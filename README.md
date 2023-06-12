@@ -46,6 +46,8 @@ Or, just use a keyboard and screen directly on the Pi from here on in.
 
 1. Copy-paste the following one-liner to install and start bpqmanager:
 
+hint: paste in a terminal is often single right-click
+
 ```
 wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remoteinstall.sh | /bin/bash
 ```
