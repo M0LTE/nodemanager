@@ -44,7 +44,7 @@ Or, just use a keyboard and screen directly on the Pi from here on in.
 
 ### Install bpqmanager
 
-1. Copy-paste the following one-liner to install and start bpqmanager:
+1. Copy-paste the following one-liner and press enter to install and start bpqmanager:
 
 hint: paste in a terminal is often single right-click
 
