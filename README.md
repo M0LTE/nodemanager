@@ -29,7 +29,7 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 1. Connect via SSH: type `ssh dave@mypi`, accept the prompt by typing "yes" and pressing enter. 
 1. Enter the password you set earlier.
 
-If you can't connect, use a keyboard and screen, log in using the username and password you set earlier, and type:
+If you can't connect, use a keyboard and screen plugged into your Pi, log in using the username and password you set earlier, and type:
 
 ```
 ifconfig wlan0 | grep inet
