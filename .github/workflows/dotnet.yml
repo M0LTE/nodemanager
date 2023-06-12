@@ -20,3 +20,8 @@ jobs:
     - name: Build standalone executable
       working-directory: bpqmanager
       run: dotnet publish --runtime linux-arm64 --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish
+    - name: Archive build output
+      uses: actions/upload-artifact@v3
+      with:
+        name: bpqmanager
+        path: publish/
