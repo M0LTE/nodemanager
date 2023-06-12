@@ -5,5 +5,5 @@ sudo systemctl stop bpqmanager > /dev/null 2>&1
 sudo systemctl disable bpqmanager > /dev/null 2>&1
 sudo rm -rf /opt/bpqmanager
 sudo rm -f /etc/systemd/system/bpqmanager.service 
-sudo systemctl daemon-reload 
+sudo systemctl daemon-reload > /dev/null 2>&1
 echo All done, bpqmanager is gone.
