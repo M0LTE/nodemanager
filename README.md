@@ -1,5 +1,9 @@
 # bpqmanager
 
+## Requirements
+
+Tested to date only on Raspberry Pi 4B, both 32 bit and 64 bit Raspberry Pi OS Lite (no desktop).
+
 ## Installation
 
 Throughout these instructions, we'll refer to your Raspberry Pi as `packetnode` and your user account on it as `dave` but you can substitute whatever name you want.
