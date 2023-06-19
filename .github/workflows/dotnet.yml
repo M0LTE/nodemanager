@@ -17,11 +17,18 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    - name: Build standalone executable
+    - name: Build standalone executables
       working-directory: bpqmanager
-      run: dotnet publish --runtime linux-arm64 --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish
-    - name: Archive build output
+      run: |
+        dotnet publish --runtime linux-arm64 --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish/arm64
+        dotnet publish --runtime linux-arm --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish/arm
+    - name: Archive build output (ARM64)
       uses: actions/upload-artifact@v3
       with:
-        name: bpqmanager
-        path: publish/
+        name: bpqmanager-arm64
+        path: publish/arm64
+    - name: Archive build output (ARM)
+      uses: actions/upload-artifact@v3
+      with:
+        name: bpqmanager-arm
+        path: publish/arm
