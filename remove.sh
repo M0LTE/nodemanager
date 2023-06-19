@@ -1,6 +1,7 @@
 #!/bin/bash -e
 echo Removing bpqmanager, please wait...
-rm -f bpqmanager.zip
+if [[ $(getconf LONG_BIT) == "32" ]]; then suffix=arm; else suffix=arm64; fi
+rm -f bpqmanager-$suffix.zip
 sudo systemctl stop bpqmanager > /dev/null 2>&1
 sudo systemctl disable bpqmanager > /dev/null 2>&1
 sudo rm -rf /opt/bpqmanager
