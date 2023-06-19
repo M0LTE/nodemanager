@@ -10,7 +10,7 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 
 1. Insert fresh micro SD card into reader
 1. Download and run Raspberry Pi Imager
-1. Under Operating System, choose Raspberry Pi OS Lite (64-bit)
+1. Under Operating System, choose Raspberry Pi OS Lite (64-bit and 32-bit both supported)
 1. Under Storage, choose your micro SD card
 1. Click the cog, choose some options:
    1. Tick Set hostname: `packetnode`
