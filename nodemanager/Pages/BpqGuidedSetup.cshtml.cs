@@ -8,7 +8,7 @@ namespace nodemanager.Pages
     {
         private readonly IModemService modemService;
 
-        public List<string>? Modems { get; set; }
+        //public List<Modem>? Modems { get; set; }
         
         public BpqGuidedSetupModel(IModemService modemService)
         {
@@ -17,12 +17,12 @@ namespace nodemanager.Pages
 
         public async Task OnGetAsync()
         {
-            Modems = (await modemService.GetModems()).Select(m => m.FullPath).ToList();
+            //Modems = (await modemService.GetModems()).ToList();
         }
 
         public async Task<IActionResult> OnGetModems()
         {
-            return new JsonResult((await modemService.GetModems()).Select(m => m.FullPath).ToList());
+            return new JsonResult((await modemService.GetModems()).ToList());
         }
     }
 }

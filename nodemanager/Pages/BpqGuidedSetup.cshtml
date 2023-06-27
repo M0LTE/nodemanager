@@ -23,7 +23,7 @@
         $("#modemInput").empty()
         $.getJSON('?handler=Modems', (data) => {
             $.each(data, function (i, item) {
-                $("#modemInput").append(`<option value="${item}">${item}</option>`);
+                $("#modemInput").append(`<option value="${item.fullPath}">${item.ttyAcmName} (${item.fullPath})</option>`);
             })
         })
     }
