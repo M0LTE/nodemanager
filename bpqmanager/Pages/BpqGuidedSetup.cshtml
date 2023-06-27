@@ -1,0 +1,20 @@
+﻿@page
+@model bpqmanager.Pages.BpqGuidedSetupModel
+@{
+}
+
+<div class="text-left">
+    <h1 class="display-4">BPQ Guided Setup</h1>
+    <p>
+        This is a guided setup assistant for BPQ and will help you get a basic node up and running.
+    </p>
+
+    <form action="" method="post" id="myForm">
+        <div class="form-group">
+            <label for="nodeCallsignInput">Node callsign</label>
+            <input type="text" class="form-control" id="nodeCallsignInput" aria-describedby="nodeCallsignHelp" placeholder="Enter node callsign">
+            <small id="nodeCallsignHelp" class="form-text text-muted">For example, GB7AAA</small>
+        </div>
+        <button class="btn btn-primary" type="submit" name="primary">Install</button>
+    </form>
+</div>
