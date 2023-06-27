@@ -18,17 +18,17 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Build standalone executables
-      working-directory: bpqmanager
+      working-directory: nodemanager
       run: |
         dotnet publish --runtime linux-arm64 --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish/arm64
         dotnet publish --runtime linux-arm --self-contained /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o ../publish/arm
     - name: Archive build output (ARM64)
       uses: actions/upload-artifact@v3
       with:
-        name: bpqmanager-arm64
+        name: nodemanager-arm64
         path: publish/arm64
     - name: Archive build output (ARM)
       uses: actions/upload-artifact@v3
       with:
-        name: bpqmanager-arm
+        name: nodemanager-arm
         path: publish/arm

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using static SimpleExec.Command;
 
-namespace bpqmanager.Services
+namespace nodemanager.Services
 {
     public class BpqManagerService
     {

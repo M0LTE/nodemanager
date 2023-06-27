@@ -1,4 +1,4 @@
-# bpqmanager
+# nodemanager
 
 ## Requirements
 
@@ -8,7 +8,7 @@ Tested to date only on Raspberry Pi 4B, both 32 bit and 64 bit Raspberry Pi OS L
 
 Throughout these instructions, we'll refer to your Raspberry Pi as `packetnode` and your user account on it as `dave` but you can substitute whatever name you want.
 
-Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and have a fresh Pi prepared with Raspberry Pi OS Lite 64 bit.
+Skip to [Install nodemanager](#install-nodemanager) if you are experienced and have a fresh Pi prepared with Raspberry Pi OS Lite 64 bit.
 
 ### Prepare your Pi
 
@@ -48,24 +48,24 @@ the IP of your Pi is 192.168.0.91, and you should try connecting like `ssh dave@
 
 Or, just use a keyboard and screen directly on the Pi from here on in.
 
-### Install bpqmanager
+### Install nodemanager
 
-1. On your Pi, copy-paste the following one-liner and press enter to install and start bpqmanager:
+1. On your Pi, copy-paste the following one-liner and press enter to install and start nodemanager:
 
 hint: paste in a terminal is often single right-click
 
 ```
-wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/install.sh | /bin/bash
+wget -qO - https://raw.githubusercontent.com/M0LTE/nodemanager/master/install.sh | /bin/bash
 ```
 
 NB if you prefer to inspect the script, run the same command but omitting `| /bin/bash`.
 
 2. From another PC, open a browser and navigate to http://packetnode:5000
 
-### Remove bpqmanager
+### Remove nodemanager
 
-If for some reason you want to remove bpqmanager, you can undo all of its installation steps with this one-liner:
+If for some reason you want to remove nodemanager, you can undo all of its installation steps with this one-liner:
 
 ```
-wget -qO - https://raw.githubusercontent.com/M0LTE/bpqmanager/master/remove.sh | /bin/bash
+wget -qO - https://raw.githubusercontent.com/M0LTE/nodemanager/master/remove.sh | /bin/bash
 ```

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace bpqmanager.Controllers
+namespace nodemanager.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

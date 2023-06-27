@@ -1,6 +1,6 @@
 ﻿using bpqconfig;
 
-namespace bpqmanager.Services
+namespace nodemanager.Services
 {
     public class BpqConfigService
     {

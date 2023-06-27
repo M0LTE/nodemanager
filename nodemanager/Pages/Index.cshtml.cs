@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace bpqmanager.Pages
+namespace nodemanager.Pages
 {
     public class IndexModel : PageModel
     {
