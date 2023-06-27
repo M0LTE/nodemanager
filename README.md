@@ -1,5 +1,9 @@
 # bpqmanager
 
+## Requirements
+
+Tested to date only on Raspberry Pi 4B, both 32 bit and 64 bit Raspberry Pi OS Lite (no desktop).
+
 ## Installation
 
 Throughout these instructions, we'll refer to your Raspberry Pi as `packetnode` and your user account on it as `dave` but you can substitute whatever name you want.
@@ -10,7 +14,7 @@ Skip to [Install bpqmanager](#install-bpqmanager) if you are experienced and hav
 
 1. Insert fresh micro SD card into reader
 1. Download and run Raspberry Pi Imager
-1. Under Operating System, choose Raspberry Pi OS Lite (64-bit)
+1. Under Operating System, choose Raspberry Pi OS Lite (64-bit and 32-bit both supported)
 1. Under Storage, choose your micro SD card
 1. Click the cog, choose some options:
    1. Tick Set hostname: `packetnode`
