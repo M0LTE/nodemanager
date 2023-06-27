@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using nodemanager.Services;
 
@@ -17,6 +18,11 @@ namespace nodemanager.Pages
         public async Task OnGetAsync()
         {
             Modems = (await modemService.GetModems()).Select(m => m.FullPath).ToList();
+        }
+
+        public async Task<IActionResult> OnGetModems()
+        {
+            return new JsonResult((await modemService.GetModems()).Select(m => m.FullPath).ToList());
         }
     }
 }

@@ -3,9 +3,43 @@
 @{
 }
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    /*$.ajax({
+        //type: 'GET',
+        url: "?handler=Modems",
+        //contentType: "application/json",
+        //dataType: "json",
+    }).done(function(data) {
+        var select = $("#modems")
+        select.children().remove()
+        //alert(data)
+    }).fail(function (error) {
+        alert(error.responseText);
+    });*/
+
+    function refreshModems(){
+        $("#modemInput").empty()
+        $.getJSON('?handler=Modems', (data) => {
+            $.each(data, function (i, item) {
+                $("#modemInput").append(`<option value="${item}">${item}</option>`);
+            })
+        })
+    }
+
+    refreshModems()
+</script>
+
 <style>
     .form-group {
         padding-bottom:20px;
+    }
+
+    .input-group-button {
+        padding: 0 0 0 5px;
+        border-color: transparent;
+        background: none;
     }
 </style>
 
@@ -47,14 +81,15 @@
         </div>
         
         <div class="form-group">
-            <ul>
-                @foreach (var item in Model.Modems)
-                {
-                    <li>
-                        @Html.Raw(item)
-                    </li>
-                }
-            </ul>
+            <label for="modemInput">Modem</label>
+            <div class="input-group">
+                <select id="modemInput" class="form-select" aria-describedby="modemHelp">
+                </select>
+                <div class="input-group-addon input-group-button">
+                    <button type="button" id="show-contact-modal-button" class="btn btn-primary" onclick="refreshModems()">Refresh</button>
+                </div>
+            </div>
+            <small id="modemHelp" class="form-text text-muted">Pick your modem.</small>
         </div>
 
         <div class="form-group">

@@ -9,7 +9,10 @@
     {
         public Task<List<Modem>> GetModems()
         {
-            //return Task.FromResult(new List<Modem> { new Modem { FullPath = "abc" }, new Modem { FullPath = "def" } });
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                return Task.FromResult(new List<Modem> { new Modem { FullPath = Guid.NewGuid().ToString() }, new Modem { FullPath = "def" } });
+            }
 
             const string dir = "/dev/serial/by-path/";
 
