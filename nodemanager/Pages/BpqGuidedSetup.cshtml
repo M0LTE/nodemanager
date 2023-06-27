@@ -3,18 +3,62 @@
 @{
 }
 
+<style>
+    .form-group {
+        padding-bottom:20px;
+    }
+</style>
+
 <div class="text-left">
     <h1 class="display-4">BPQ Guided Setup</h1>
     <p>
         This is a guided setup assistant for BPQ and will help you get a basic node up and running.
     </p>
 
-    <form action="" method="post" id="myForm">
+    <form action="" method="post" id="configForm">
         <div class="form-group">
             <label for="nodeCallsignInput">Node callsign</label>
-            <input type="text" class="form-control" id="nodeCallsignInput" aria-describedby="nodeCallsignHelp" placeholder="Enter node callsign">
-            <small id="nodeCallsignHelp" class="form-text text-muted">For example, GB7AAA</small>
+            <input type="text" class="form-control" id="nodeCallsignInput" aria-describedby="nodeCallsignHelp" placeholder="examples: GB7AAA, M0AAA, M0AAA-7" maxlength="10">
+            <small id="nodeCallsignHelp" class="form-text text-muted">The node callsign is the "top level" callsign for this packet station. 
+                If you aren't sure, just use your own callsign without an SSID after it (e.g. -7).</small>
         </div>
-        <button class="btn btn-primary" type="submit" name="primary">Install</button>
+
+        <div class="form-group">
+            <label for="nodeAliasInput">Node alias (optional)</label>
+            <input type="text" class="form-control" id="nodeAliasInput" aria-describedby="nodeAliasHelp" placeholder="e.g. AAABPQ" maxlength="6">
+            <small id="nodeAliasHelp" class="form-text text-muted">Optional alias that people will be able to use to connect directly to your node over the air.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="locatorInput">Grid square (optional)</label>
+            <input type="text" class="form-control" id="locatorInput" aria-describedby="locatorHelp" placeholder="e.g. IO99aa" maxlength="6">
+            <small id="locatorHelp" class="form-text text-muted">
+                If you want your station to appear on mapping services, enter your Maidenhead grid square. If you don't know your grid square, go <a href="https://whatsmylocator.co.uk/" target="_blank">here</a>,
+                enter your address, then copy Gridquare into this box.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordInput">Sysop password</label>
+            <input type="password" class="form-control" id="passwordInput" aria-describedby="passwordHelp" placeholder="" maxlength="30">
+            <small id="passwordHelp" class="form-text text-muted">
+                Required for some admin tasks. Warning: this will be saved as plain text in your config file, so make it unique.
+            </small>
+        </div>
+        
+        <div class="form-group">
+            <ul>
+                @foreach (var item in Model.Modems)
+                {
+                    <li>
+                        @Html.Raw(item)
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" name="primary">Install</button>
+        </div>
     </form>
 </div>
