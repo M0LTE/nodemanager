@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bpqmanager", "bpqmanager\bpqmanager.csproj", "{E985A876-E3CB-4260-AC40-1B61F4BD967C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nodemanager", "nodemanager\nodemanager.csproj", "{E985A876-E3CB-4260-AC40-1B61F4BD967C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bpqconfig", "bpqconfig\bpqconfig.csproj", "{F0FD07CF-0C59-4C5C-AF4B-D1F923472E21}"
 EndProject
