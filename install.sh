@@ -1,5 +1,6 @@
 #!/bin/bash -e
 echo Installing nodemanager, please wait...
+cd ~
 if [[ $(getconf LONG_BIT) == "32" ]]; then suffix=arm; else suffix=arm64; fi
 rm -f nodemanager-$suffix.zip
 wget -q https://nightly.link/M0LTE/nodemanager/workflows/dotnet/master/nodemanager-$suffix.zip
