@@ -1,5 +1,6 @@
 #!/bin/bash -e
 echo Removing nodemanager, please wait...
+cd ~
 if [[ $(getconf LONG_BIT) == "32" ]]; then suffix=arm; else suffix=arm64; fi
 rm -f nodemanager-$suffix.zip
 sudo systemctl stop nodemanager > /dev/null 2>&1
