@@ -7,6 +7,15 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IModemService, LinuxModemService>();
 
+if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+{
+    builder.Services.AddTransient<IBpqStateService, DevBpqStateService>();
+}
+else
+{
+    builder.Services.AddTransient<IBpqStateService, LinuxBpqStateService>();
+}
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

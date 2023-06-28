@@ -5,11 +5,67 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script>
+    function refreshStatus() {
+        $.getJSON('?handler=BpqState', (data) => {
+            //$('#id').children.empty()
+            
+            $('#configPresent').removeClass('btn-secondary')
+            $('#configPresent').removeClass('btn-success')
+            $('#configPresent').removeClass('btn-danger')
+
+            $('#binaryPresent').removeClass('btn-secondary')
+            $('#binaryPresent').removeClass('btn-success')
+            $('#binaryPresent').removeClass('btn-danger')
+
+            $('#serviceInstalled').removeClass('btn-secondary')
+            $('#serviceInstalled').removeClass('btn-success')
+            $('#serviceInstalled').removeClass('btn-danger')
+
+            $('#serviceRunning').removeClass('btn-secondary')
+            $('#serviceRunning').removeClass('btn-success')
+            $('#serviceRunning').removeClass('btn-danger')
+
+            if (data.configPresent){
+                $('#configPresent').addClass('btn-success')
+            } else {
+                $('#configPresent').addClass('btn-danger')
+            }
+
+            if (data.binaryPresent) {
+                $('#binaryPresent').addClass('btn-success')
+            } else {
+                $('#binaryPresent').addClass('btn-danger')
+            }
+
+            if (data.serviceInstalled) {
+                $('#serviceInstalled').addClass('btn-success')
+            } else {
+                $('#serviceInstalled').addClass('btn-danger')
+            }
+
+            if (data.serviceRunning) {
+                $('#serviceRunning').addClass('btn-success')
+            } else {
+                $('#serviceRunning').addClass('btn-danger')
+            }
+                
+        })
+    }
+
+    setInterval(function () {
+        refreshStatus()
+    }, 1000)
+</script>
 
 <div class="text-left">
     <h1 class="display-4">BPQ Setup</h1>
+    <h2>Current state</h2>
     <p>
-        
+        <button type="button" class="btn btn-secondary" id="configPresent">Config present</button>
+        <button type="button" class="btn btn-secondary" id="binaryPresent">Binary present</button>
+        <button type="button" class="btn btn-secondary" id="serviceInstalled">Service installed</button>
+        <button type="button" class="btn btn-secondary" id="serviceRunning">Service running</button>
     </p>
 
    
