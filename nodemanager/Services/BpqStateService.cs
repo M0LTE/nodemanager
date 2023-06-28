@@ -64,7 +64,12 @@ public class LinuxBpqStateService : IBpqStateService
         }
         catch (ExitCodeException ex)
         {
-            return ex.ExitCode == 130;
+            if (ex.ExitCode == 3)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 
