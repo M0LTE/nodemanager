@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-group {
+    padding-bottom: 20px;
+}
+
+.input-group-button {
+    padding: 0 0 0 5px;
+    border-color: transparent;
+    background: none;
+}
