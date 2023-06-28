@@ -22,6 +22,10 @@
             $('#serviceInstalled').removeClass('btn-success')
             $('#serviceInstalled').removeClass('btn-danger')
 
+            $('#serviceEnabled').removeClass('btn-secondary')
+            $('#serviceEnabled').removeClass('btn-success')
+            $('#serviceEnabled').removeClass('btn-danger')
+
             $('#serviceRunning').removeClass('btn-secondary')
             $('#serviceRunning').removeClass('btn-success')
             $('#serviceRunning').removeClass('btn-danger')
@@ -42,6 +46,12 @@
                 $('#serviceInstalled').addClass('btn-success')
             } else {
                 $('#serviceInstalled').addClass('btn-danger')
+            }
+
+            if (data.serviceEnabled) {
+                $('#serviceEnabled').addClass('btn-success')
+            } else {
+                $('#serviceEnabled').addClass('btn-danger')
             }
 
             if (data.serviceRunning) {
@@ -65,6 +75,7 @@
         <button type="button" class="btn btn-secondary" id="configPresent">Config present</button>
         <button type="button" class="btn btn-secondary" id="binaryPresent">Binary present</button>
         <button type="button" class="btn btn-secondary" id="serviceInstalled">Service installed</button>
+        <button type="button" class="btn btn-secondary" id="serviceEnabled">Service enabled</button>
         <button type="button" class="btn btn-secondary" id="serviceRunning">Service running</button>
     </p>
 

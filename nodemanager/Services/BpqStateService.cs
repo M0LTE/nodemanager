@@ -7,6 +7,7 @@ public interface IBpqStateService
 {
     Task<bool> IsBinaryPresent();
     Task<bool> IsBpqServiceInstalled();
+    Task<bool> IsBpqServiceEnabled ();
     Task<bool> IsBpqServiceRunning();
     Task<bool> IsConfigPresent();
 }
@@ -20,6 +21,10 @@ public class DevBpqStateService : IBpqStateService
     }
 
     public Task<bool> IsBpqServiceInstalled()
+    {
+        return Task.FromResult(true);
+    }
+    public Task<bool> IsBpqServiceEnabled()
     {
         return Task.FromResult(true);
     }
@@ -51,6 +56,24 @@ public class LinuxBpqStateService : IBpqStateService
         }
         catch (ExitCodeException)
         {
+            return false;
+        }
+    }
+
+    public async Task<bool> IsBpqServiceEnabled()
+    {
+        try
+        {
+            var (stdout, stderr) = await ReadAsync("systemctl", "status linbpq");
+            return stdout.Contains("linbpq.service; enabled;");
+        }
+        catch (ExitCodeReadException ex)
+        {
+            if (ex.ExitCode == 3 && ex.StandardOutput.Contains("linbpq.service; enabled;"))
+            {
+                return true;
+            }
+
             return false;
         }
     }

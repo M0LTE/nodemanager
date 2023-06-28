@@ -25,6 +25,7 @@ public class BpqSetupModel : PageModel
             configPresent = await bpqStateService.IsConfigPresent(),
             binaryPresent = await bpqStateService.IsBinaryPresent(),
             serviceInstalled = await bpqStateService.IsBpqServiceInstalled(),
+            serviceEnabled = await bpqStateService.IsBpqServiceEnabled(),
             serviceRunning = await bpqStateService.IsBpqServiceRunning()
         });
     }
