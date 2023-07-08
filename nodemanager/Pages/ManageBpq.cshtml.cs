@@ -4,11 +4,11 @@ using nodemanager.Services;
 
 namespace nodemanager.Pages;
 
-public class BpqSetupModel : PageModel
+public class ManageBpqModel : PageModel
 {
     private readonly IBpqStateService bpqStateService;
 
-    public BpqSetupModel(IBpqStateService bpqStateService)
+    public ManageBpqModel(IBpqStateService bpqStateService)
     {
         this.bpqStateService = bpqStateService;
     }
