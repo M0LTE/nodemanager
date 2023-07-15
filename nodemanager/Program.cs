@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IModemService, LinuxModemService>();
+builder.Services.AddSingleton<BpqManagerService>();
 
 if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 {

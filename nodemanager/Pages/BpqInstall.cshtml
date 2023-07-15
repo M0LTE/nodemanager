@@ -1,0 +1,57 @@
+﻿@page
+@model nodemanager.Pages.BpqInstallModel
+@{
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+    .form-group {
+        padding-bottom:20px;
+    }
+
+    .input-group-button {
+        padding: 0 0 0 5px;
+        border-color: transparent;
+        background: none;
+    }
+</style>
+
+<div class="text-left">
+    <h1 class="display-4">BPQ Installation</h1>
+
+    @if (!Model.IsInstalling)
+    {
+        <p>
+            You can use this page to install / upgrade BPQ from either source code or from released binaries.
+        </p>
+
+        <p>
+            If your BPQ is running now, any of the actions here will stop BPQ until it is complete. The new BPQ binary will be placed at /opt/linbpq/linbpq.
+        </p>
+        <p>
+            If anything goes wrong, you might have to recover manually, but your BPQ configuration, if present, will not be altered.
+        </p>
+
+        <form action="" method="post" id="form">
+
+            <div class="form-group">
+                <button id="releaseBinaryButton" class="btn btn-primary" type="submit" asp-page-handler="ReleaseBinary">Use release binary from G8BPQ</button><br />
+                Note: if this system is 64 bit Raspberry Pi OS, 32 bit repos will be enabled and 32 bit depdendencies will be installed.
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" asp-page-handler="BetaBinary">Use beta binary from G8BPQ</button><br />
+                Note: if this system is 64 bit Raspberry Pi OS, 32 bit repos will be enabled and 32 bit depdendencies will be installed.
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" asp-page-handler="FromSource">Build BPQ from latest source</button><br />
+                Note: there is no guarantee that G8BPQ's published source code is stable at any given time.
+            </div>
+
+        </form>
+    } else {
+        <p>Installing now...</p>
+    }
+</div>
